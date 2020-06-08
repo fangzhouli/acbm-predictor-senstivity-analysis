@@ -10,15 +10,9 @@ from analysis._base import Analyzer
 class SobolAnalyzer(Analyzer):
 
     def analyze(self):
-        # calculate sensitivity measure
-        X = saltelli.sample(self.problem, 1000)
+        """store analysis output at /data/output/sobol.txt"""
+
+        X = saltelli.sample(self.problem, 1000, seed = 1)
         Y = ACBM.evaluate(X)
-        si = sobol.analyze(
-            problem = self.problem,
-            Y = np.array(Y))
-
+        si = sobol.analyze(self.problem, Y, seed = 2)
         pickle.dump(si, open(self.path_output + 'sobol.txt', 'wb'))
-
-if __name__ == '__main__':
-    alzr = SobolAnalyzer()
-    alzr.analyze()

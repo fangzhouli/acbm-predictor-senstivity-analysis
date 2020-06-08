@@ -113,11 +113,3 @@ class Analyzer:
             'names'     : names,
             'bounds'    : bounds
         }
-
-    def dump_input(self):
-        X = finite_diff.sample(self.problem, 1005, delta = 0.001)
-        pickle.dump(X, open(self.path_input, 'wb'))
-
-if __name__ == '__main__':
-    alzr = Analyzer()
-    alzr.dump_input()

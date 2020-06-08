@@ -10,16 +10,9 @@ from analysis._base import Analyzer
 class DeltaAnalyzer(Analyzer):
 
     def analyze(self):
-        # calculate sensitivity measure
-        X = latin.sample(self.problem, 1000)
+        """store analysis output at /data/output/delta.txt"""
+
+        X = latin.sample(self.problem, 1000, seed = 9)
         Y = ACBM.evaluate(X)
-        si = delta.analyze(
-            problem = self.problem,
-            X = X,
-            Y = np.array(Y))
-
-        pickle.dump(si, open(self.path_output + 'delta1.txt', 'wb'))
-
-if __name__ == '__main__':
-    alzr = DeltaAnalyzer()
-    alzr.analyze()
+        si = delta.analyze(self.problem, X, Y, seed = 10)
+        pickle.dump(si, open(self.path_output + 'delta.txt', 'wb'))

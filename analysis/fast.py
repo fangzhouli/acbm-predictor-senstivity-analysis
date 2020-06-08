@@ -10,15 +10,9 @@ from analysis._base import Analyzer
 class FastAnalyzer(Analyzer):
 
     def analyze(self):
-        # calculate sensitivity measure
-        X = fast_sampler.sample(self.problem, 1000)
+        """store analysis output at /data/output/fast.txt"""
+
+        X = fast_sampler.sample(self.problem, 1000, M = 4, seed = 3)
         Y = ACBM.evaluate(X)
-        si = fast.analyze(
-            problem = self.problem,
-            Y = np.array(Y))
-
-        pickle.dump(si, open(self.path_output + 'fast2.txt', 'wb'))
-
-if __name__ == '__main__':
-    alzr = FastAnalyzer()
-    alzr.analyze()
+        si = fast.analyze(self.problem, Y, M = 4, seed = 4)
+        pickle.dump(si, open(self.path_output + 'fast.txt', 'wb'))

@@ -10,16 +10,9 @@ from analysis._base import Analyzer
 class RDBFastAnalyzer(Analyzer):
 
     def analyze(self):
-        # calculate sensitivity measure
-        X = latin.sample(self.problem, 1000)
+        """store analysis output at /data/output/rbd_fast.txt"""
+
+        X = latin.sample(self.problem, 1000, seed = 5)
         Y = ACBM.evaluate(X)
-        si = rbd_fast.analyze(
-            problem = self.problem,
-            X = X,
-            Y = np.array(Y))
-
+        si = rbd_fast.analyze(self.problem, X, Y, M = 10, seed = 6)
         pickle.dump(si, open(self.path_output + 'rbd_fast.txt', 'wb'))
-
-if __name__ == '__main__':
-    alzr = RDBFastAnalyzer()
-    alzr.analyze()

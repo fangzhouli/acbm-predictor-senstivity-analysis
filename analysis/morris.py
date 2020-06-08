@@ -10,17 +10,9 @@ from analysis._base import Analyzer
 class MorrisAnalyzer(Analyzer):
 
     def analyze(self):
-        # calculate sensitivity measure
-        X = m_sample(self.problem, 1000, num_levels = 4)
+        """store analysis output at /data/output/morris.txt"""
+
+        X = m_sample(self.problem, 1000, num_levels = 4, seed = 7)
         Y = ACBM.evaluate(X)
-        si = m_analyze(
-            problem = self.problem,
-            X = X,
-            Y = np.array(Y),
-            num_levels = 4)
-
+        si = m_analyze(self.problem, X, Y, num_levels = 4, seed = 8)
         pickle.dump(si, open(self.path_output + 'morris.txt', 'wb'))
-
-if __name__ == '__main__':
-    alzr = MorrisAnalyzer()
-    alzr.analyze()
