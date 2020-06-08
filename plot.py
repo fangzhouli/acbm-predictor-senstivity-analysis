@@ -61,10 +61,10 @@ if __name__ == '__main__':
 
     # plotting
     algs = ['Derivative-based Global Sensitivity Measure (DGSM)',
-        'Sobol Sensitivity Analysis',
-        'Delta Moment-Independent Measure',
+        'Sobol Sensitivity Analysis (SSA)',
+        'Delta Moment-Independent Measure (DMIM)',
         'Fourier Amplitude Sensitivity Test (FAST)',
-        'Morris Method',
+        'Morris Method (MM)',
         'Random Balance Designs Fourier Amplitude Sensitivity Test (RBD-FAST)']
     params = ['Average single cell density (rho_c)',
         'Average single cell volume (V_c)',
