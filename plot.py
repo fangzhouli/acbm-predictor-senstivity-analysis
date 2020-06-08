@@ -76,8 +76,6 @@ if __name__ == '__main__':
 
     fig = go.Figure()
     for alg, sm_values in zip(algs, sm_top):
-        print(alg)
-        print(sm_values)
         fig.add_trace(
             go.Scatterpolar(
                 r = sm_values,

@@ -1,5 +1,7 @@
 from math import log, ceil
 
+import numpy as np
+
 def acbm(conc_inoc, V_inoc, V_seed, conc_seed, V_b,
         concen_desired, m, f_ab, f_L, t_m, t_y, f_s, f_FM, V_c, rho_c, t_D,
         GCR_c, OUR_c, conc_aa2p, conc_nahco3, conc_sodium, conc_insulin,
@@ -89,4 +91,4 @@ def evaluate(param_values):
     Y = []
     for X in param_values:
         Y.append(acbm(*X))
-    return Y
+    return np.array(Y)
