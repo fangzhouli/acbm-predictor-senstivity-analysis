@@ -4,8 +4,6 @@
 
 This project aims to provide a comprehensive sensitivity analysis for animal-cell-based meat (ACBM) cost prediction model.
 
-The analysis consists of the application of 6 algorithms: Morris Method (MM), Sobol Sensitivity Analysis (SSA), Random Balance Designs Fourier Amplitude Sensitivity Test (RBD-FAST), Fourier Amplitude Sensitivity Test (FAST), Delta Moment-Independent Measure (DMIM), and Derivative-based Global Sensitivity Measure (DGSM).
-
 ## Usage
 
 ### Installation
@@ -26,6 +24,9 @@ python plot.py  # create a spider plot to visualize SA
 ## Methods
 
 ![fig](/fig/spiderplot.png)
+The analysis consists of the application of 6 algorithms: Morris Method (MM), Sobol Sensitivity Analysis (SSA), Random Balance Designs Fourier Amplitude Sensitivity Test (RBD-FAST), Fourier Amplitude Sensitivity Test (FAST), Delta Moment-Independent Measure (DMIM), and Derivative-based Global Sensitivity Measure (DGSM).
+
+The model contains 67 parameters, and for each SA algorithm, the analyzer recorded 5 parameters with the most sensitivity measures. After eliminating the duplicates among these 30 parameters, there were 9 parameters having high sensitivity measures. We used these 9 parameter to plot the figure above.
 
 ## Authors
 
