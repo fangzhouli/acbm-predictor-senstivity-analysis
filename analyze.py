@@ -2,14 +2,14 @@ from analyzers import *
 
 
 def analyze_all():
-    # delta = DeltaAnalyzer()
+    delta = DeltaAnalyzer()
     dgsm = DGSMAnalyzer()
     fast = FastAnalyzer()
     morris = MorrisAnalyzer()
     rbd_fast = RDBFastAnalyzer()
     sobol = SobolAnalyzer()
 
-    # delta.analyze()
+    delta.analyze()
     dgsm.analyze()
     fast.analyze()
     morris.analyze()
