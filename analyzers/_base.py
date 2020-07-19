@@ -30,6 +30,9 @@ class Analyzer:
         self.path_output = self.path_root + '/../data/output/'
         self.problem = self.load_problem()
 
+        if not os.path.exists(self.path_output):
+            os.mkdir(self.path_output)
+
     def load_problem(self):
         """Load the problem attribute.
 
