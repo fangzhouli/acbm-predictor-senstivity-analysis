@@ -23,11 +23,15 @@ python analyze.py  # generates analysis result files in 'acbm/data/output'
 python plot.py  # create a spider plot to visualize SA
 ```
 
-### Authors
+## Methods
+
+![fig](/fig/spiderplot.png)
+
+## Authors
 
 - Fangzhou Li - https://github.com/fangzhouli
 
-### Ackowledgements
+## Ackowledgements
 
 - Derrick Risner, for providing ACBM model and data
 - Ilias Tagkopoulos, for advisory and documentation review
