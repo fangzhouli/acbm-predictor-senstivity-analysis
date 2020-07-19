@@ -23,6 +23,7 @@ setup(
     packages=find_packages(),
     python_requires='>=3.6',
     install_requires=[
+        'xlrd>=1.0.0'
         'SALib>=1.3.11',
         'numpy>=1.18.1',
         'pandas>=1.0.3',
