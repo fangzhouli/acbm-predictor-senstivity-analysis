@@ -4,7 +4,7 @@
 
 This project aims to provide a comprehensive sensitivity analysis for animal-cell-based meat (ACBM) cost prediction model.
 
-Note: This repo is an old version. For the newest version, please refer to [this](https://github.com/IBPA/IBPA-Collection-of-Reproducible-Code-and-Results/tree/master/2020_Artificial_Meat).
+Note: This repo is a forked version. For the newest version, please refer to [this](https://github.com/IBPA/IBPA-Collection-of-Reproducible-Code-and-Results/tree/master/2020_Artificial_Meat).
 
 ## Usage
 
